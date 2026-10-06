@@ -22,3 +22,4 @@ venv/
 
 # DB
 *.db
+!src/watchlist.json

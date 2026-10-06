@@ -1,0 +1,31 @@
+name: 關鍵分點 Telegram 通知
+
+on:
+  schedule:
+    - cron: "5 11 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send-alert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 下載專案檔案
+        uses: actions/checkout@v5
+
+      - name: 設定 Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: 安裝查詢需要的套件
+        run: pip install requests beautifulsoup4
+
+      - name: 查詢分點並傳送 Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python src/branch_alert.py
