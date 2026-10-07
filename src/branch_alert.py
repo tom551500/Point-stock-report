@@ -79,6 +79,9 @@ def main():
     if not items:
         raise ValueError("watchlist.json 裡沒有追蹤項目")
 
+    today = datetime.now(TZ).strftime("%Y-%m-%d")
+    report_lines = []
+
     for item in items:
         result = fetch_today(item)
 
@@ -86,27 +89,48 @@ def main():
             print(f'{item["stock_name"]}：今天沒有資料，跳過')
             continue
 
-        print(
-            f'{item["stock_name"]}｜{item["branch_name"]}：'
-            f'買進 {result["buy"]} 張、'
-            f'賣出 {result["sell"]} 張、'
-            f'買賣超 {result["net"]:+,} 張'
-        )
-
         if result["buy"] == 0 and result["sell"] == 0:
-            print("今天沒有買賣，不傳 Telegram")
+            print(f'{item["stock_name"]}：今天沒有買賣，跳過')
             continue
 
-        message = (
-            f'{result["date"]} {item["stock_name"]}（{item["stock_id"]}）'
-            f'｜{item["branch_name"]}\n'
-            f'買進：{result["buy"]:,} 張\n'
-            f'賣出：{result["sell"]:,} 張\n'
-            f'買賣超：{result["net"]:+,} 張'
+        if result["net"] > 0:
+            icon = "🟢"
+        elif result["net"] < 0:
+            icon = "🔴"
+        else:
+            icon = "⚪"
+
+        line = (
+            f'{icon} {item["stock_name"]}（{item["stock_id"]}）'
+            f'｜{item["branch_name"]} '
+            f'買 {result["buy"]:,}／賣 {result["sell"]:,}／'
+            f'淨 {result["net"]:+,} 張'
         )
+        report_lines.append(line)
+        print(line)
+
+    if not report_lines:
+        print("今天追蹤的分點都沒有買賣，不傳 Telegram")
+        return
+
+    title = f"📊 關鍵分點日報 {today}"
+    messages = []
+    current_message = title
+
+    for line in report_lines:
+        addition = f"\n\n{line}"
+
+        # 保留長度空間，避免超過 Telegram 單則訊息上限
+        if len(current_message) + len(addition) > 3900:
+            messages.append(current_message)
+            current_message = f"{title}（續）"
+            addition = f"\n\n{line}"
+
+        current_message += addition
+
+    messages.append(current_message)
+
+    for message in messages:
         send_telegram(message)
-        print("Telegram 已送出")
 
-
-if __name__ == "__main__":
-    main()
+    print(f"Telegram 日報已送出，共 {len(messages)} 則")
