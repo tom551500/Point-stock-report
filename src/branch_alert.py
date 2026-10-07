@@ -134,3 +134,5 @@ def main():
         send_telegram(message)
 
     print(f"Telegram 日報已送出，共 {len(messages)} 則")
+if __name__ == "__main__":
+    main()
