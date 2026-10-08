@@ -2,7 +2,8 @@ name: 關鍵分點 Telegram 通知
 
 on:
   schedule:
-    - cron: "5 11 * * 1-5"
+    - cron: "17 19 * * 1-5"
+      timezone: "Asia/Taipei"
   workflow_dispatch:
 
 permissions:
