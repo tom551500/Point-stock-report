@@ -1,9 +1,9 @@
-name: 台股關鍵分點 Telegram 通知（平日 20:17）
+name: 台股關鍵分點 Telegram 通知（平日 19:17）
 
 on:
   schedule:
-    # GitHub Actions cron uses UTC: 12:17 UTC = 20:17 Asia/Taipei.
-    - cron: "17 12 * * 1-5"
+    # GitHub Actions cron uses UTC: 11:17 UTC = 19:17 Asia/Taipei.
+    - cron: "17 11 * * 1-5"
   workflow_dispatch:
 
 permissions:
