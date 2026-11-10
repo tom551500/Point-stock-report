@@ -64,6 +64,24 @@
     {"stock_id":"1590","stock_name":"亞德客-KY","branch_code":"9600","branch_name":"富邦","broker_code":"9600"},
     {"stock_id":"4513","stock_name":"福裕","branch_code":"7003","branch_name":"兆豐-台中","broker_code":"7000"},
     {"stock_id":"2357","stock_name":"華碩","branch_code":"9604","branch_name":"富邦-陽明","broker_code":"9600"},
-    {"stock_id":"3323","stock_name":"加百裕","branch_code":"9813","branch_name":"元大-八德","broker_code":"9800"}
+    {"stock_id":"3323","stock_name":"加百裕","branch_code":"9813","branch_name":"元大-八德","broker_code":"9800"},
+    {"stock_id":"3630","stock_name":"新鉅科","branch_code":"8843","branch_name":"玉山-高雄","broker_code":"8800"},
+    {"stock_id":"6125","stock_name":"廣運","branch_code":"9B2z","branch_name":"台新-文心","broker_code":"9B00"},
+    {"stock_id":"1795","stock_name":"美時","branch_code":"9200","branch_name":"凱基","broker_code":"9200"},
+    {"stock_id":"5531","stock_name":"鄉林","branch_code":"9A9L","branch_name":"永豐金-台中","broker_code":"9A00"},
+    {"stock_id":"4739","stock_name":"康普","branch_code":"9859","branch_name":"元大-新竹經國","broker_code":"9800"},
+    {"stock_id":"2313","stock_name":"華通","branch_code":"9600","branch_name":"富邦","broker_code":"9600"},
+    {"stock_id":"6411","stock_name":"晶焱","branch_code":"9B18","branch_name":"台新-建北","broker_code":"9B00"},
+    {"stock_id":"3037","stock_name":"欣興","branch_code":"1260","branch_name":"宏遠","broker_code":"1260"},
+    {"stock_id":"5469","stock_name":"瀚宇博","branch_code":"984K","branch_name":"元大-館前","broker_code":"9800"},
+    {"stock_id":"3031","stock_name":"佰鴻","branch_code":"989C","branch_name":"元大-板橋","broker_code":"9800"},
+    {"stock_id":"2069","stock_name":"運錩","branch_code":"9B1g","branch_name":"台新-高雄","broker_code":"9B00"},
+    {"stock_id":"4414","stock_name":"如興","branch_code":"9A9g","branch_name":"永豐金-內湖","broker_code":"9A00"},
+    {"stock_id":"1218","stock_name":"泰山","branch_code":"9889","branch_name":"元大-員林","broker_code":"9800"},
+    {"stock_id":"6548","stock_name":"長科*","branch_code":"9206","branch_name":"凱基-高雄","broker_code":"9200"},
+    {"stock_id":"2633","stock_name":"台灣高鐵","branch_code":"8880","branch_name":"國泰","broker_code":"8880"},
+    {"stock_id":"6191","stock_name":"精成科","branch_code":"984K","branch_name":"元大-館前","broker_code":"9800"},
+    {"stock_id":"1612","stock_name":"宏泰","branch_code":"8450","branch_name":"福邦","broker_code":"8450"},
+    {"stock_id":"4967","stock_name":"十銓","branch_code":"918B","branch_name":"群益金鼎-板橋","broker_code":"9100"}
   ]
 }
